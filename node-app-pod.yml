@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lms-app-pod
+  labels:
+    name: lms-app-pod
+    app: demo-lms-app
+spec:
+  containers:
+  - name: lms-app
+    image: keshavmurali/lms-app:latest
+    ports:
+      - containerPort: 3000
