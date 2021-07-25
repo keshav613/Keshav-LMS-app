@@ -1,25 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: lms-app-deploy
+  name: lms
   labels:
-    name: lms-app-deploy
-    app: demo-lms-app
+    app: lms
 spec:
   replicas: 3
   selector:
     matchLabels:
-        name: lms-app-pod
-        app: demo-lms-app
+      app: lms
   template:
     metadata:
-      name: lms-app-pod
       labels:
-        name: lms-app-pod
-        app: demo-lms-app
+        app: lms
     spec:
       containers:
-      - name: lms-app
-        image: keshavmurali/lms-app:latest
-        ports:
-          - containerPort: 3000
+        - name: lms
+          image: keshavmurali/lms-app:latest
+          ports:
+            - containerPort: 80
+              name: lms
