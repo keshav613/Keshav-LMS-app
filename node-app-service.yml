@@ -5,9 +5,8 @@ metadata:
   labels:
     app: lms
 spec:
-  type: LoadBalancer
   selector:
     app: lms
   ports:
-    - port: 5000
+    - port: 80
       targetPort: 80
