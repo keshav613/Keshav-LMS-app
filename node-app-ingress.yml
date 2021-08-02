@@ -8,7 +8,8 @@ spec:
   rules:
     - http:
         paths:
-          - path: /LMS/*
+          - pathType: Prefix
+            path: "/LMS"
             backend:
               serviceName: lms
               servicePort: 80
