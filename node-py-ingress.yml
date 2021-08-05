@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: lms
+  labels:
+    app: lms
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: "/LMS"
+            backend:
+              serviceName: lms
+              servicePort: 80
